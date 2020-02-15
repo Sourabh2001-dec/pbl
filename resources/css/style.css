@@ -43,6 +43,14 @@ body {
     visibility: hidden;
 }
 
+#reg_user_firstname-error,#confirm_user_password-error,
+#register_user_password-error,#user_email-error,#reg_user_lastname-error,
+#reg_user_firstname-error{
+    color: red;
+    font-weight: 400;
+    font-size: 90%;
+}
+
 /*--------------reusable items-----------*/
 
 .row {
@@ -243,7 +251,7 @@ body {
 }
 
 .load_more-row {
-    margin-top: 20px;
+    margin: 20px auto;
 }
 
 .load_more {
@@ -283,14 +291,12 @@ body {
 footer {
     display: block;
     position: relative;
-    top: 100%;
     width: 100%;
     height: 100px;
     background-color: black;
     text-align: center;
     line-height: 100px;
     color: grey;
-    margin-top: 50px;
 }
 
 
@@ -304,12 +310,12 @@ footer {
     width: 30vw;
     padding: 10px;
     box-shadow: -4px 9px 25px -6px rgba(0, 0, 0, .1);
-    margin: 120px auto;
+    margin: 120px auto 60px auto;
     font-size: 113%;
     padding: 10px 20px;
 }
 
-.login_box div {
+.login_box .form-heading {
     text-align: center;
     font-weight: bold;
     color: #ff9123;
@@ -322,8 +328,10 @@ input[type="text"] {
     border: none;
     border-bottom: 1px solid grey;
     outline: none;
-    font-size: 90%;
+    font-size: 93%;
     width: 90%;
+    padding-bottom: 7px;
+    padding-top: 5px;
 }
 
 .login_container input[type='submit'] {

@@ -16,7 +16,7 @@
     <section class="nav_fix login_container">
         
         <form action="login.php" method="post" class="login_box">
-            <div>Login</div> <br><br>
+            <div class="form-heading">Login</div> <br><br>
 
             Email <br>
             <input type="email" name="user_email" id="user_email" required> <br><br>
