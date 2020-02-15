@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 172 58">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #262323;
+        font-size: 40px;
+        font-family: SegoeUI-Bold, Segoe UI;
+        font-weight: 700;
+      }
+
+      .cls-2 {
+        fill: #ff9123;
+      }
+    </style>
+  </defs>
+  <g id="Group_1" data-name="Group 1" transform="translate(-960 -523)">
+    <text id="InfoGeek" class="cls-1" transform="translate(960 571)"><tspan x="0" y="0">InfoGeek</tspan></text>
+    <rect id="Rectangle_1" data-name="Rectangle 1" class="cls-2" width="70" height="10" transform="translate(960 523)"/>
+  </g>
+</svg>

@@ -1,0 +1,364 @@
+
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,500,700&display=swap');
+
+/*------------------------------------*/
+/*font-family: 'Open Sans', sans-serif;*/
+/*font-family: 'Open Sans Condensed', sans-serif;
+font-family: 'Lora', serif;
+font-family: 'Raleway', sans-serif;*/
+/*---------------------------------------------*/
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+
+*:focus{
+    outline: none;
+}
+
+input:invalid{
+    box-shadow: none;
+}
+
+body {
+    /* background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); */
+    background-color: rgb(255, 252, 252);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+
+.clearfix::after,
+.clearfix::before {
+    content: "";
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+/*--------------reusable items-----------*/
+
+.row {
+    width: 90vw;
+    margin: 0 auto;
+}
+
+
+.nav_fix {
+    margin-top: 80px;
+}
+
+/*----------------navbar-------------------*/
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgb(32, 32, 32);
+    box-shadow: -4px 9px 25px -6px rgba(0, 0, 0, .1);
+    z-index: 999;
+}
+
+.navbar .logo {
+    float: left;
+    width: 150px;
+    margin: 10px 0 0 20px;
+}
+
+.navbar .logo img {
+    width: 100%;
+}
+
+.navbar_container {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+}
+
+.navbar_menu {
+    list-style: none;
+    float: right;
+    line-height: 65.38px;
+    margin-right: 20px;
+
+
+}
+
+.navbar_menu li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.navbar li a {
+    text-decoration: none;
+    color: white;
+    background-color: #ff9123;
+    padding: 7px 10px;
+    font-size: 90%;
+    transition: background-color 0.3s;
+}
+
+
+.navbar li a:hover {
+    background-color: #e68728;
+}
+
+/* ------------display section---------------- */
+
+.form_tab {
+    position: relative;
+}
+
+.search{
+    position: absolute;
+    right: 0;
+    display: inline-block;
+    width: auto;
+}
+
+.searchbox{
+    border: 1px solid rgb(192, 192, 192);
+    padding: 5px 10px;
+    height: 100%;
+    width: 30vw;
+}
+
+.searchbutton{
+    padding: 5px 10px;
+    background-color: #ff9123;
+    font-size: 90%;
+    border: none;
+    color: white;
+}
+
+/* .search {
+    position: absolute;
+    right: 0;
+    display: inline-block;
+    width: 400px;
+}
+
+.searchbox {
+    border: 1px solid rgb(192, 192, 192);
+    padding: 5px 10px;
+    display: inline-block;
+}
+
+.searchbutton {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #ff9123;
+    font-size: 90%;
+    border: none;
+    color: white;
+} */
+
+#category_select {
+    border-radius: 20px;
+    border: 1px solid rgb(192, 192, 192);
+    padding: 5px 10px;
+    width: 30%;
+}
+
+
+/* -----------------feed section------------------- */
+.wrapper {
+    margin-top: 10px;
+    height: auto;
+
+}
+
+.display_title,
+.rank_heading {
+    text-transform: uppercase;
+    color: rgb(124, 120, 120);
+    font-size: 95%;
+    font-weight: bold;
+}
+
+.main-post,
+.ranked_post {
+    margin-top: 10px;
+    font-family: 'Raleway', sans-serif;
+    background-color: white;
+    border-radius: 10px;
+    height: auto;
+    width: 100%;
+    padding: 10px;
+    box-shadow: -4px 9px 25px -6px rgba(0, 0, 0, .1);
+}
+
+.post_image {
+    width: 30%;
+    float: left;
+}
+
+/* .post_image img{
+   height: 100%;
+   width: 100%;
+} */
+.content {
+    float: left;
+    width: 65%;
+    margin-left: 5%;
+}
+
+.post_title {
+    font-size: 160%;
+    font-weight: bold;
+    letter-spacing: 0.4px;
+    color: rgb(75, 75, 75);
+}
+
+.post_title h1 {
+    font-size: 150%;
+    color: rgb(75, 75, 75);
+}
+
+.post_by_info,
+.rank_post_by {
+    font-size: 70%;
+    font-weight: bold;
+    color: grey;
+    letter-spacing: 1px;
+    margin-top: 10px;
+}
+
+.post_by_info .author,
+.post_date,
+.rank_author,
+.rank_date {
+    display: inline;
+    color: #ff9123;
+    font-size: 100%;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.load_more-row {
+    margin-top: 20px;
+}
+
+.load_more {
+    text-align: center;
+    cursor: pointer;
+}
+
+.load_more span {
+    background-color: rgb(212, 212, 212);
+    padding: 5px 10px;
+    border-radius: 5px;
+
+}
+
+
+/* -----------------ranking sidebar------------ */
+.rank_num,
+.rank_title,
+.rank_author,
+.rank_date {
+    display: inline;
+}
+
+.rank_num {
+    font-weight: 500;
+    font-size: 150%;
+    text-decoration: underline;
+}
+
+.rank_title {
+    font-size: 90%;
+}
+
+
+/* -----------------footer------------------- */
+
+footer {
+    display: block;
+    position: relative;
+    top: 100%;
+    width: 100%;
+    height: 100px;
+    background-color: black;
+    text-align: center;
+    line-height: 100px;
+    color: grey;
+    margin-top: 50px;
+}
+
+
+
+/* -------------------login page-------------------- */
+
+.login_box {
+    background-color: white;
+    border-radius: 10px;
+    height: auto;
+    width: 30vw;
+    padding: 10px;
+    box-shadow: -4px 9px 25px -6px rgba(0, 0, 0, .1);
+    margin: 120px auto;
+    font-size: 113%;
+    padding: 10px 20px;
+}
+
+.login_box div {
+    text-align: center;
+    font-weight: bold;
+    color: #ff9123;
+    font-size: 160%;
+}
+
+input[type='email'],
+input[type='password'],
+input[type="text"] {
+    border: none;
+    border-bottom: 1px solid grey;
+    outline: none;
+    font-size: 90%;
+    width: 90%;
+}
+
+.login_container input[type='submit'] {
+    margin: 10px auto;
+    padding: 10px 30px;
+    background-color: #ffffff;
+    color: #ff9123;
+    border: 1px solid #ff9123;
+    border-radius: 50px;
+    cursor: pointer;
+
+    transition: border 0.3s,border-radius 0.3s,background-color 0.3s,color 0.3s;
+}
+
+
+.login_container input[type='submit']:hover {
+    border: none;
+    border-radius: 50px;
+    background-color: #ff9123;
+    color: white;
+}
+
+.login_container{
+    min-height: 64.5vh;
+}
+
+.login_submit_button{
+    text-align: center;
+}
+
+.login_submit_button span{
+    color: grey;
+}
+
+.login_submit_button a{
+    text-decoration: none;
+    color: #ff9123;
+}
