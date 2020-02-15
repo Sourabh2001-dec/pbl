@@ -8,10 +8,14 @@
     <title>InfoGeek</title>
     <link rel="stylesheet" href="resources\css\style.css">
     <link rel="stylesheet" href="vendor\css\skeleton.css">
+    <link rel="stylesheet" href="vendor\css\fontawesome.min.css">
+    <link rel="stylesheet" href="vendor\css\all.css">
+    
+
 </head>
 
 <body>
-    <?php include "navbar.php" ?>
+    <?php include "session_navbar.php" ?>
     <section class="row form_tab nav_fix clearfix">
         Category : <select id="category_select">
             <option value="">Physics</option>

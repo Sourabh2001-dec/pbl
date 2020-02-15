@@ -145,6 +145,6 @@ $(function() {
 
 });
 </script>
-    <script src="resources\js\register.js"></script>
+    
 </body>
 </html>

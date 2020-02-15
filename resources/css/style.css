@@ -104,6 +104,8 @@ body {
     margin-left: 20px;
 }
 
+
+
 .navbar li a {
     text-decoration: none;
     color: white;
@@ -111,6 +113,10 @@ body {
     padding: 7px 10px;
     font-size: 90%;
     transition: background-color 0.3s;
+}
+
+.navbar li:nth-child(2) a{
+    background-color: white;
 }
 
 
