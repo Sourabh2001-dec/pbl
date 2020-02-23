@@ -15,12 +15,7 @@ $conn->query($sql);
 
 $conn->close();
 
-$json['message'] ="Entered data successfully";
 
-echo json_encode($json);
-        }
-        else{
-            echo "entered password and confirmed password does not match";
         }
 }
 ?>
@@ -53,6 +48,7 @@ echo json_encode($json);
 
             <div style="font-weight: bold;">Email</div> 
             <input type="email" name="register_user_email" id="user_email" required> <br><br>
+            
             <div style="font-weight: bold;">Password</div>
             <input type="password" name="register_user_password" id="register_user_password" required>
             <br><br>
@@ -93,7 +89,8 @@ $(function() {
 			},
 			register_user_email: {
 				required: true,
-				email: true
+				email: true,
+                uniquemail : true,
 			},
 			register_user_password: {
 				required: true,
@@ -105,7 +102,10 @@ $(function() {
             }
 		},
 		messages: {
-			reg_user_firstname: "Please enter your first name",
+			reg_user_firstname:{
+				required: "Please enter your first name",
+				lettersonly: "Please enter only alphabetical characters"
+			},
 			reg_user_lastname: {
 				required: "Please enter your last name",
 				lettersonly: "Please enter only alphabetical characters"
@@ -115,33 +115,54 @@ $(function() {
 				// number: "Please provide a Numeric value",
 				minlength: "Your password must be at least 5 characters long"
 			},
-            register_user_email: "Please enter a valid email address",
+            register_user_email:{ 
+                email : "Please enter a valid email address",
+                uniquemail : "email already present",
+                },
             register_user_confirm_password : {
                 required: "Please confirm password",
-                equalTo : "Password does not match"
+                equalTo : "Password does not match",
+               
             }
 		},
 
 		submitHandler: function(form) {
-			// $.ajax({
-			// 	url: form.action,
-			// 	type: form.method,
-			// 	data: $(form).serialize(),
-			// 	dataType: "json",
-			// 	success: function(response) {
-			// 		alert(response.message);
-			// 		location.reload();
-			// 	}            
-            // });
+			
             form.submit();
             alert("submitted");
             Location.reload();
 		}
 	});
+
+    
+    jQuery.validator.addMethod("uniquemail",function(value, element) {
+      
+        var success = true;
+
+        var data = new FormData();
+data.append('mail', value);
+
+        var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+       if (xhttp.responseText=='F'){
+           success = false
+       }
+       else{
+            success = true
+       }
+    }
+};
+xhttp.open("POST", "uniuser.php", false);
+xhttp.send(data);
+
+            return success;
+	},''); 
 	
 	jQuery.validator.addMethod("lettersonly", function(value, element) {
 	  return this.optional(element) || /^[a-z]+$/i.test(value);
 	}, "Letters only please"); 
+
 
 });
 </script>
