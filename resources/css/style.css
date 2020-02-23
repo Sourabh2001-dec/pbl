@@ -115,7 +115,12 @@ body {
     transition: background-color 0.3s;
 }
 
-.navbar li:nth-child(2) a{
+.session_nav li:nth-child(3) a{
+    background-color: white;
+    border-radius: 2px;
+}
+
+.session_nav li:nth-child(3) a:hover{
     background-color: white;
 }
 
@@ -340,7 +345,7 @@ input[type="text"] {
     padding-top: 5px;
 }
 
-.login_container input[type='submit'] {
+.login_container input[type='submit'],input[type='button'] {
     margin: 10px auto;
     padding: 10px 30px;
     background-color: #ffffff;
@@ -353,8 +358,8 @@ input[type="text"] {
 }
 
 
-.login_container input[type='submit']:hover {
-    border: none;
+.login_container input[type='submit']:hover,input[type='button']:hover {
+    border: 1px solid #ff9123;
     border-radius: 50px;
     background-color: #ff9123;
     color: white;

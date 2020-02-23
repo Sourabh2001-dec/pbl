@@ -15,7 +15,17 @@
 </head>
 
 <body>
-    <?php include "session_navbar.php" ?>
+    <?php 
+    session_start();
+    if (isset($_SESSION['name'])) {
+        include 'session_navbar.php';
+    }
+    else{
+        session_destroy();
+        include 'navbar.php';
+        
+    }
+     ?>
     <section class="row form_tab nav_fix clearfix">
         Category : <select id="category_select">
             <option value="">Physics</option>

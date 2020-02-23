@@ -1,7 +1,7 @@
 <div class="navbar clearfix">
 
     <div class="logo">
-        <img src="resources\img\logo2x.png" alt="">
+    <a href="index.php"><img src="resources\img\logo2x.png" alt=""></a>
     </div>
 
     <ul class="navbar_menu">

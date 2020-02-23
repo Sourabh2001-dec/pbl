@@ -20,7 +20,7 @@ $json['message'] ="Entered data successfully";
 echo json_encode($json);
         }
         else{
-            echo "entered password and confirmed pawword does not match";
+            echo "entered password and confirmed password does not match";
         }
 }
 ?>
