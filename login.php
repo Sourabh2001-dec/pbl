@@ -52,7 +52,11 @@
   crossorigin="anonymous"></script>
 <script>
 $(document).ready(function(){
-    $("#login_button").click(function(){
+    if($("#user_email").val()!=""){
+    $('input[type="password"]').focus();
+    }
+
+    var callback = function(){
         var username = $("#user_email").val().trim();
         var password = $("#user_password").val().trim();
         console.log(username,password)
@@ -74,7 +78,14 @@ $(document).ready(function(){
                 }
             });
         }
-    });
+    }
+
+    $('input').keypress(function() {
+    if (event.which == 13) {callback()};
+})
+
+
+    $("#login_button").click(function(){callback()});
 });
 </script>
     
