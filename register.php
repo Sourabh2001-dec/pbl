@@ -69,11 +69,9 @@ $conn->close();
 
     <?php include "footer.php" ?>
     <script
-  src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"></script>
+  src="vendor\js\jquery.min.js"></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js" integrity="sha256-sPB0F50YUDK0otDnsfNHawYmA5M0pjjUf4TvRJkGFrI=" crossorigin="anonymous"></script>
+  <script src="vendor\js\jquery.validate.min.js"></script>
 <script>
 $(function() {
 	  
