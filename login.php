@@ -9,6 +9,10 @@
     <title>InfoGeek</title>
 
     <link rel="stylesheet" href="resources/css/style.css">
+
+    <?php
+    include_once 'link_inc.php'
+    ?>
 </head>
 
 <body>
@@ -46,8 +50,7 @@
     </section>
     
 <?php include "footer.php" ?>
-<script
-  src="vendor\js\jquery.min.js"></script>
+
 <script>
 $(document).ready(function(){
     if($("#user_email").val()!=""){

@@ -12,9 +12,12 @@ font-family: 'Raleway', sans-serif;*/
 * {
     margin: 0;
     padding: 0;
-    font-size: 18px;
     box-sizing: border-box;
     font-family: 'Raleway', sans-serif;
+}
+
+body{
+    font-size: 18px;
 }
 
 *:focus{
@@ -43,92 +46,57 @@ body {
     visibility: hidden;
 }
 
-#reg_user_firstname-error,#confirm_user_password-error,
-#register_user_password-error,#user_email-error,#reg_user_lastname-error,
+#reg_user_firstname-error,#register_user_confirm_password-error,
+#register_user_password-error,#register_user_email-error,#reg_user_lastname-error,
 #reg_user_firstname-error{
     color: red;
     font-weight: 400;
     font-size: 80%;
     display: block;
+    padding: 0;
+    margin: 0;
+}c
+
+#reg_user_firstname2-error,#register_user_confirm_password2-error,
+#register_user_password2-error,#register_user_email2-error,#reg_user_lastname2-error,
+#reg_user_firstname2-error{
+    color: red;
+    font-weight: 400;
+    font-size: 80%;
+    display: block;
+    padding: 0;
+    margin: 0;
 }
 
 /*--------------reusable items-----------*/
 
-.row {
+.row_user {
     width: 90vw;
+   
     margin: 0 auto;
+    
 }
 
 
 .nav_fix {
-    margin-top: 80px;
+    margin-top: 10px;
 }
 
 /*----------------navbar-------------------*/
-
-.navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: rgb(32, 32, 32);
-    box-shadow: -4px 9px 25px -6px rgba(0, 0, 0, .1);
-    z-index: 999;
+.navbar{
+    background-color: rgb(7, 0, 44);
+    font-size: 100%;
 }
 
-.navbar .logo {
-    float: left;
-    width: 150px;
-    margin: 10px 0 0 20px;
+.navbar .navbar-brand img{
+    height: 40px;
 }
 
-.navbar .logo img {
-    width: 100%;
-}
-
-.navbar_container {
-    height: 100%;
-    width: 100%;
-    padding: 0;
-}
-
-.navbar_menu {
-    list-style: none;
-    float: right;
-    line-height: 65.38px;
-    margin-right: 20px;
-
-
-}
-
-.navbar_menu li {
-    display: inline-block;
-    margin-left: 20px;
-}
-
-
-
-.navbar li a {
-    text-decoration: none;
+.navbar nav-link{
     color: white;
-    background-color: #ff9123;
-    padding: 7px 10px;
-    font-size: 90%;
-    transition: background-color 0.3s;
-}
-
-.session_nav li:nth-child(3) a{
-    background-color: white;
-    border-radius: 2px;
-}
-
-.session_nav li:nth-child(3) a:hover{
-    background-color: white;
 }
 
 
-.navbar li a:hover {
-    background-color: #e68728;
-}
 
 /* ------------display section---------------- */
 
@@ -180,12 +148,12 @@ body {
     color: white;
 } */
 
-#category_select {
+/* #category_select {
     border-radius: 20px;
     border: 1px solid rgb(192, 192, 192);
     padding: 5px 10px;
     width: 30%;
-}
+} */
 
 
 /* -----------------feed section------------------- */
@@ -334,7 +302,7 @@ footer {
     font-size: 160%;
 }
 
-input[type='email'],
+/* input[type='email'],
 input[type='password'],
 input[type="text"] {
     border: none;
@@ -344,7 +312,7 @@ input[type="text"] {
     width: 90%;
     padding-bottom: 7px;
     padding-top: 5px;
-}
+} */
 
 .login_container input[type='submit'],input[type='button'] {
     margin: 10px auto;

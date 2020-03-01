@@ -10,7 +10,12 @@
     <link rel="stylesheet" href="vendor\css\skeleton.css">
     <link rel="stylesheet" href="vendor\css\fontawesome.min.css">
     <link rel="stylesheet" href="vendor\css\all.css">
-    
+    <link rel="stylesheet" href="vendor/css/bootstrap.min.css">
+
+    <script src="vendor/js/jquery.min.js"></script>
+    <script src="vendor/js/popper.js"></script>
+    <script src="vendor/js/bootstrap.min.js"></script>
+
 
 </head>
 
@@ -26,24 +31,27 @@
         
     }
      ?>
-    <section class="row form_tab nav_fix clearfix">
-        Category : <select id="category_select">
-            <option value="">Physics</option>
-            <option value="">Mathematics</option>
-            <option value="">Sports</option>
-            <option value="">Mechanival Engineering</option>
-        </select>
-        <div class="search">
-            <div class="nine columns clearfix">
-            <input type="text" name="search" id="searchbox" placeholder="Search here.." class="searchbox">
+    <section class="row_user form_tab nav_fix clearfix">
+        <div class="d-none d-sm-block">
+            <div class="eight columns">
+                <label for="category_select"> Category : </label><select name="category_select"
+                    class="form-control-inline ml-1 w-25  custom-select">
+                    <option value="">Physics</option>
+                    <option value="">Mathematics</option>
+                    <option value="">Sports</option>
+                    <option value="">Mechanival Engineering</option>
+                </select>
             </div>
-
-            <div class="three columns clearfix">
-            <input type="submit" name="search_word" value="Search" class="searchbutton">
+            <div class="four columns">
+                <form class="form-inline w-100" style="display:inline-block;">
+                    <input class="form-control mr-sm-2 w-50 border " type="text" placeholder="Search">
+                    <button class="btn btn-outline-warning ml-1 ml-md-0" type="submit">Search</button>
+                </form>
             </div>
         </div>
+
     </section>
-    <div class="row">
+    <div class="row_user">
         <div class="wrapper clearfix">
             <div class="eight columns">
                 <div class="display_title">
@@ -123,7 +131,7 @@
 
                 <!-- ----------end of post--------- -->
 
-                
+
 
             </div>
 
@@ -135,12 +143,15 @@
 
 
 
-    <div class="row load_more-row clearfix">
+    <div class="row_user load_more-row clearfix">
         <div class="load_more eight columns">
             <span>Load More</span>
         </div>
     </div>
     <?php include "footer.php" ?>
+
+
+
 </body>
 
 </html>
