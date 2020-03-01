@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,22 +12,28 @@
     <?php
     include_once 'link_inc.php'
     ?>
+    <style>
+        section {
+            min-height: 79vh;
+            padding-top: 10vh;
+        }
+
+        section form {
+            box-shadow: -4px 9px 25px -6px rgba(0, 0, 0, .1);
+            padding: 3%;
+
+        }
+    </style>
+
 </head>
 
 <body>
     <?php include "plain_navbar.php" ?>
 
-    <section class="nav_fix login_container">
-        
-        <?php 
-            if (isset($_SESSION['name'])) {
-                echo isset($_SESSION['name']);
-            };
-        ?>
+    <section class="container">
 
 
-
-        <form class="login_box">
+        <!-- <form class="login_box">
             <div class="form-heading">Login</div> <br><br>
             <span id="message" style="color:red"></span>
                 
@@ -45,51 +50,95 @@
             <span>
             New here? <a href="register.php">Create Account</a></span>
             </div>
+        </form> -->
+
+
+        <form id="register_form">
+            <div style="text-align:center;font-size:170%;color:#ff9123;margin-bottom: 20px;">
+                Login
+            </div>
+
+            <div class="form-row">
+                <div class="col-md-3"></div>
+                <div class="form-group col-md-6">
+                    <label for="user_email">Email</label>
+                    <input type="email" class="form-control" name="user_email" id="user_email" required>
+                    <label for="user_password">Password</label>
+                    <input type="password" class="form-control" name="user_password" id="user_password" required>
+
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+
+
+            <div class="login_submit_button">
+                <input type="button" value="Login" name='login' id='login_button'><br>
+
+                <span>
+                    New here? <a href="register.php">Create Account</a></span>
+            </div>
+
         </form>
-        
+
+
+
+
+
+
+
+
+
+
     </section>
-    
-<?php include "footer.php" ?>
 
-<script>
-$(document).ready(function(){
-    if($("#user_email").val()!=""){
-    $('input[type="password"]').focus();
-    }
+    <?php include "footer.php" ?>
 
-    var callback = function(){
-        var username = $("#user_email").val().trim();
-        var password = $("#user_password").val().trim();
-        console.log(username,password)
+    <script>
+        $(document).ready(function () {
+            if ($("#user_email").val() != "") {
+                $('input[type="password"]').focus();
+            }
 
-        if( username != "" && password != "" ){
-            $.ajax({
-                url:'login_verify.php',
-                type:'POST',
-                data:{username:username,password:password},
-                success:function(response){
-                    var msg = "";
-                    if(response == 1){
-                        window.location = "index.php";
-                    }else{
-                        msg = "Invalid username or password!";
-                        $("#message").html(msg+"<br><br>");
-                    }
-                    
+            var callback = function () {
+                var username = $("#user_email").val().trim();
+                var password = $("#user_password").val().trim();
+                console.log(username, password)
+
+                if (username != "" && password != "") {
+                    $.ajax({
+                        url: 'login_verify.php',
+                        type: 'POST',
+                        data: {
+                            username: username,
+                            password: password
+                        },
+                        success: function (response) {
+                            var msg = "";
+                            if (response == 1) {
+                                window.location = "index.php";
+                            } else {
+                                msg = "Invalid username or password!";
+                                $("#message").html(msg + "<br><br>");
+                            }
+
+                        }
+                    });
                 }
+            }
+
+            $('input').keypress(function () {
+                if (event.which == 13) {
+                    callback()
+                };
+            })
+
+
+            $("#login_button").click(function () {
+                callback()
             });
-        }
-    }
+        });
+    </script>
 
-    $('input').keypress(function() {
-    if (event.which == 13) {callback()};
-})
-
-
-    $("#login_button").click(function(){callback()});
-});
-</script>
-    
 </body>
 
 </html>

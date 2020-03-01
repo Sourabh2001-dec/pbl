@@ -14,10 +14,11 @@ font-family: 'Raleway', sans-serif;*/
     padding: 0;
     box-sizing: border-box;
     font-family: 'Raleway', sans-serif;
+    font-size : 17px;
 }
 
 body{
-    font-size: 18px;
+
 }
 
 *:focus{
@@ -48,7 +49,7 @@ body {
 
 #reg_user_firstname-error,#register_user_confirm_password-error,
 #register_user_password-error,#register_user_email-error,#reg_user_lastname-error,
-#reg_user_firstname-error{
+#reg_user_firstname-error,#year-error,#divi-error{
     color: red;
     font-weight: 400;
     font-size: 80%;
@@ -85,7 +86,7 @@ body {
 /*----------------navbar-------------------*/
 .navbar{
     background-color: rgb(7, 0, 44);
-    font-size: 100%;
+    /* font-size: 100%; */
 }
 
 .navbar .navbar-brand img{
@@ -126,34 +127,6 @@ body {
     color: white;
 }
 
-/* .search {
-    position: absolute;
-    right: 0;
-    display: inline-block;
-    width: 400px;
-}
-
-.searchbox {
-    border: 1px solid rgb(192, 192, 192);
-    padding: 5px 10px;
-    display: inline-block;
-}
-
-.searchbutton {
-    display: inline-block;
-    padding: 5px 10px;
-    background-color: #ff9123;
-    font-size: 90%;
-    border: none;
-    color: white;
-} */
-
-/* #category_select {
-    border-radius: 20px;
-    border: 1px solid rgb(192, 192, 192);
-    padding: 5px 10px;
-    width: 30%;
-} */
 
 
 /* -----------------feed section------------------- */
@@ -212,7 +185,7 @@ body {
 
 .post_by_info,
 .rank_post_by {
-    font-size: 70%;
+    font-size: 83%;
     font-weight: bold;
     color: grey;
     letter-spacing: 1px;
@@ -295,7 +268,7 @@ footer {
     padding: 10px 20px;
 }
 
-.login_box .form-heading {
+ .form-heading {
     text-align: center;
     font-weight: bold;
     color: #ff9123;

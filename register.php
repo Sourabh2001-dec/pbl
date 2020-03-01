@@ -2,21 +2,35 @@
     include_once "db.php";
 
     if(isset($_POST['save'])){
+        echo $_POST['divi'];
         if($_POST['register_user_password']==$_POST['register_user_confirm_password']){
-        $sql = "INSERT INTO user (firstname, lastname, email, password) VALUES ('".$_POST["reg_user_firstname"]."','".$_POST["reg_user_lastname"]."','".$_POST["register_user_email"]."','".$_POST["register_user_password"]."')";
-        
-    
 
-    if($conn->query($sql)){
-        echo 'submitted';
-    };
+            $uname = $_POST['register_user_email'];
+            $password = $_POST['register_user_password'];
 
+            if ($uname != "" && $password != ""){
 
-    $conn->close();
+            $sql = "select count(*) as cntUser from user where email='".$uname."' and password='".$password."'";
+            $result = $conn->query($sql);
+            $row = mysqli_fetch_array($result);
+            $count = $row['cntUser'];
+
+            if($count > 0){
+                echo '';
+                
+            }else{
+                $sql = "INSERT INTO user (firstname, lastname, email, password, is_teacher, year, division) VALUES ('".$_POST["reg_user_firstname"]."','".$_POST["reg_user_lastname"]."','".$_POST["register_user_email"]."','".$_POST["register_user_password"]."','".$_POST["is_teacher"]."','".$_POST["year"]."','".$_POST["divi"]."')";
+                $conn->query($sql);
+            
+            }
+
+            $conn->close();
 
 
         }
 }
+    }
+
 ?>
 
 
@@ -59,18 +73,18 @@
             color: #a5a5a5;
         }
 
-        section{
-            min-height:80vh;
+        section {
+            min-height: 80vh;
         }
 
-        .btn{
+        .btn {
             background-color: transparent;
             border: 1px solid #FF9123;
             color: #FF9123;
             min-width: 100px;
         }
 
-        .btn:hover{
+        .btn:hover {
             color: white;
             background-color: #FF9123;
         }
@@ -81,40 +95,29 @@
 <body>
     <?php include "plain_navbar.php" ?>
 
-    <!-- <section class="login_container">
-        
-        <form action="register.php" method="post" class="login_box" id="register_form">
-            <div class="form-heading">Sign Up</div> <br><br>
+    
+    
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Registration Successful!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <!-- <div class="modal-body">
+        Registration Successful
+      </div> -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+        <a href="login.php"><button type="button" class="btn btn-primary">Go to Login</button></a>
+      </div>
+    </div>
+  </div>
+</div>
 
-            <div style="font-weight: bold;">First name</div>
-            <input type="text" name="reg_user_firstname" id="reg_user_firstname" required><br>
-
-            <div style="font-weight: bold;">Last name</div> 
-            <input type="text" name="reg_user_lastname" id="reg_user_lastname" required><br><br>
-
-            <div style="font-weight: bold;">Email</div> 
-            <input type="email" name="register_user_email" id="user_email" required> <br><br>
-            
-            <div style="font-weight: bold;">Password</div>
-            <input type="password" name="register_user_password" id="register_user_password" required>
-            <br><br>
-
-            <div style="font-weight: bold;">Confirm Password</div> 
-            <input type="password" name="register_user_confirm_password" id="confirm_user_password" required>
-            <br><br>
-            <div class="login_submit_button">
-            <input type="submit" value="Sign Up" name='save' id = "save_button"><br>
-
-            
-            <span>
-            <a href="login.php">Login</a></span>
-            </div>
-        </form>
-
-
-
-        
-    </section> -->
 
     <section>
 
@@ -131,7 +134,7 @@
 
             <div class="tab-content">
                 <div class="tab-pane active container" id="student">
-                    <form id="register_form" method="POST" action="register.php" class="mb-4">
+                    <form id="register_form" class="mb-4">
                         <div class="form-row">
 
                             <div class="form-group col-md-6">
@@ -173,17 +176,17 @@
                             <div class="col-md-6  form-group">
                                 <label for="year">Select Year</label>
                                 <select name="year" id="year" class="form-control" required>
-                                    <option value="0">Select Year..</option>
-                                    <option value="1">FE</option>
-                                    <option value="2">SE</option>
-                                    <option value="3">TE</option>
-                                    <option value="4">BE</option>
+                                    <option value=0>Select Year..</option>
+                                    <option value="FE">FE</option>
+                                    <option value="SE">SE</option>
+                                    <option value="TE">TE</option>
+                                    <option value="BE">BE</option>
                                 </select>
                             </div>
                             <div class="col-md-6  form-group">
                                 <label for="divi">Select division</label>
                                 <select name="divi" id="divi" class="form-control" required>
-                                    <option value="0">Select Division..</option>
+                                    <option value=0>Select Division..</option>
                                     <option value="1">01</option>
                                     <option value="2">02</option>
                                     <option value="3">03</option>
@@ -200,14 +203,14 @@
                             </div>
                         </div>
                         <button type="submit" name='save' class="btn rounded-pill mt-3" style="margin-left: 50%;
-                        transform: translateX(-50%);" id='save_button'>Sign in</button>
+                        transform: translateX(-50%);" id='save_button'>Sign Up</a>
                     </form>
 
                 </div>
 
                 <div class="tab-pane fade container" id="faculty">
 
-                    <form id="register_form2" method="POST" action="register.php" class="mb-4">
+                    <form id="register_form2" class="mb-4">
                         <div class="form-row">
 
                             <div class="form-group col-md-6">
@@ -247,7 +250,7 @@
 
 
                         <button type="submit" name='save' class="btn rounded-pill mt-3" style="margin-left: 50%;
-                        transform: translateX(-50%);">Sign in</button>
+                        transform: translateX(-50%);">Sign Up</button>
                     </form>
 
 
@@ -286,7 +289,16 @@
                     },
                     register_user_confirm_password: {
                         equalTo: '#register_user_password'
+                    },
+                    divi : {
+                        required : true,
+                        selection : true
+                    },
+                    year : {
+                        required : true,
+                        selection : true
                     }
+
                 },
                 messages: {
                     reg_user_firstname: {
@@ -314,14 +326,34 @@
                 },
 
                 submitHandler: function (form) {
-                    form.submit();
-                    alert(form.register_user_email.value)
-                    alert("submitted")
-                    // $('#save_button').value = "Creating Account..";
-                    // Location.reload();
-                    // alert("submitted");
-                    console.log(form.register_user_email.value)
 
+                    
+                    
+                    form.reset();
+                    $.ajax({
+                        type: "POST",
+                        url: 'register.php',
+                        data: {
+                            register_user_confirm_password:form.register_user_confirm_password.value,
+                            register_user_email:form.register_user_email.value,
+                            register_user_password:form.register_user_password.value,
+                            reg_user_lastname:form.reg_user_lastname.value,
+                            reg_user_firstname:form.reg_user_firstname.value,
+                            divi : form.divi.value,
+                            year : form.year.value,
+                            is_teacher : '0',
+                            save : 'save'
+
+                        }, // serializes the form's elements.
+                        success: function () {
+                            $('#myModal').modal('show');
+                            form.reset();      
+                        }
+                    });
+
+                    
+
+                    
                 }
             });
 
@@ -352,6 +384,15 @@
             jQuery.validator.addMethod("lettersonly", function (value, element) {
                 return this.optional(element) || /^[a-z]+$/i.test(value);
             }, "Letters only please");
+
+            jQuery.validator.addMethod("selection", function (value, element) {
+                if(value == 0){
+                    return false;
+                }
+                else{
+                    return true;
+                }
+            }, "Please do the selection");
 
 
         });
@@ -410,13 +451,27 @@
                 },
 
                 submitHandler: function (form) {
-                    form.submit();
-                    alert(form.register_user_email.value)
-                    alert("submitted")
-                    // $('#save_button').value = "Creating Account..";
-                    // Location.reload();
-                    // alert("submitted");
-                    console.log(form.register_user_email.value)
+                    $.ajax({
+                        type: "POST",
+                        url: 'register.php',
+                        data: {
+                            register_user_confirm_password:form.register_user_confirm_password.value,
+                            register_user_email:form.register_user_email.value,
+                            register_user_password:form.register_user_password.value,
+                            reg_user_lastname:form.reg_user_lastname.value,
+                            reg_user_firstname:form.reg_user_firstname.value,
+                            divi : '0',
+                            year : '0',
+                            is_teacher : '1',
+                            save : 'save'
+
+                        }, // serializes the form's elements.
+                        success: function () {
+                            $('#myModal').modal('show');
+                            form.reset();      
+                        }
+                    });
+
 
                 }
             });
