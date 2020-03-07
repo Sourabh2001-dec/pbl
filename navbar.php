@@ -10,21 +10,21 @@
 
 
 
-            <li class="nav-item mx-1">
-                <a class="nav-link text-white" href="login.php">Create</a>
+            <li class="nav-item mx-2">
+                <a class="nav-link text-white" href="createpost.php">Create</a>
             </li>
 
 
-            <li class="nav-item mx-1">
+            <li class="nav-item mx-2">
                 <a class="nav-link text-white" href="login.php">Contact</a>
             </li>
 
-            <li class="nav-item mx-1">
+            <li class="nav-item mx-2">
                 <a class="nav-link text-white" href="login.php">Login</a>
             </li>
 
 
-            <li class="nav-item mx-1">
+            <li class="nav-item mx-2">
                 <a class="nav-link text-white" href="register.php">Sign Up</a>
             </li>
 

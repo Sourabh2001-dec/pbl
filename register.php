@@ -327,9 +327,6 @@
 
                 submitHandler: function (form) {
 
-                    
-                    
-                    form.reset();
                     $.ajax({
                         type: "POST",
                         url: 'register.php',
@@ -347,6 +344,7 @@
                         }, // serializes the form's elements.
                         success: function () {
                             $('#myModal').modal('show');
+                            alert(form.divi.value)
                             form.reset();      
                         }
                     });

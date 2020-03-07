@@ -97,6 +97,22 @@ body {
     color: white;
 }
 
+.navbar ul li .nav-link::after{
+    position: relative;
+    content: '';
+    width: 0%;
+    background-color: rgb(231, 186, 35);
+    height: 2px;
+    display: block;
+    margin-top: 2px;
+    transition:  width 0.7s;
+}
+
+.navbar ul li .nav-link:hover:after{
+    display: block;
+    width: 100%;
+}
+
 
 
 /* ------------display section---------------- */
