@@ -1,3 +1,11 @@
+<!-- <?php 
+	if (isset($_SESSION["mail"])) {
+			
+		
+	}
+?> -->
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,6 +29,17 @@
 			max-height: 350px;
 		}
 
+		.row {
+			margin-right: 0 !important;
+			margin-left: 0 !important;
+		}
+
+		.form_wrap {
+			min-height: 90vh;
+		}
+
+
+
 		@media only screen and (max-width: 430px) {
 			.ck.ck-toolbar-dropdown .ck.ck-toolbar .ck.ck-toolbar__items {
 				flex-wrap: wrap !important;
@@ -33,33 +52,36 @@
 <body>
 
 	<?php
-	
+	$id = $_SESSION["mail"].uniqid();
+
 	if (isset($_SESSION["mail"])) {
 		include_once "session_navbar.php";
-		echo '
-		<div class="row">
-		<div class="col-md-1"></div>
-	<div class="col-md-10 mt-4">
 
-	<form>
+		echo '
+		
+		<div class="row form_wrap">
+		<div class="col-md-1"></div>
+	<div class="col-md-10 mt-4 ">
+
+	<form class="px-2">
 		<div class="form-group">
 			<label for="title">Title <span style="color: rgb(170, 169, 169);"><i>(The title of the blog goes here)</i></span></label>
 			<input type="text" name="title" id="title" class="form-control">
 		</div>
 		<div class="row">
-		<div class="form-group col-md-6">
-			<label for="category_select"> Category <span style="color: rgb(170, 169, 169);"><i>(Category to which blog content belongs)</i></span> : </label><select name="category_select"
-                    class="form-control custom-select">
-                    <option value="">Physics</option>
-                    <option value="">Mathematics</option>
-                    <option value="">Sports</option>
-                    <option value="">Mechanival Engineering</option>
+		<div class="form-group col-md-6 px-0">
+			<label for="category"> Category <span style="color: rgb(170, 169, 169);"><i>(Category to which blog content belongs)</i></span> : </label>
+			<select name="category" id="category" class="form-control">
+                    <option value="physics" selected>Physics</option>
+                    <option value="mathematics">Mathematics</option>
+                    <option value="sports">Sports</option>
+                    <option value="mechanical engineering">Mechanival Engineering</option>
                 </select>
 		</div>
 	</div>
 
 		<div class="row">
-		<div class="form-group col-md-6">
+		<div class="form-group col-md-6 px-0">
 			<label for="file">Thumbnail image</label>
 			<input type="file" name="file" id="file" class="form-control">
 
@@ -71,136 +93,38 @@
 		
 
 		
-
+		<br>
     <textarea id="editor" name="editor_content">
-		<p>Here goes the initial content of the editor.</p>
-		<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores tempore eos dolores iusto earum saepe in sunt quibusdam, iste libero. Provident iste consectetur quis maxime consequuntur. Sunt magnam odit blanditiis? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores tempore eos dolores iusto earum saepe in sunt quibusdam, iste libero. Provident iste consectetur quis maxime consequuntur. Sunt magnam odit blanditiis?</p>
-		<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores tempore eos dolores iusto earum saepe in sunt quibusdam, iste libero. Provident iste consectetur quis maxime consequuntur. Sunt magnam odit blanditiis?</p>
-
-		<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores tempore eos dolores iusto earum saepe in sunt quibusdam, iste libero. Provident iste consectetur quis maxime consequuntur. Sunt magnam odit blanditiis?</p>
-		<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores tempore eos dolores iusto earum saepe in sunt quibusdam, iste libero. Provident iste consectetur quis maxime consequuntur. Sunt magnam odit blanditiis?</p>
-		<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores tempore eos dolores iusto earum saepe in sunt quibusdam, iste libero. Provident iste consectetur quis maxime consequuntur. Sunt magnam odit blanditiis?</p>
-		<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores tempore eos dolores iusto earum saepe in sunt quibusdam, iste libero. Provident iste consectetur quis maxime consequuntur. Sunt magnam odit blanditiis?</p>
-		<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores tempore eos dolores iusto earum saepe in sunt quibusdam, iste libero. Provident iste consectetur quis maxime consequuntur. Sunt magnam odit blanditiis?</p>
-		<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores tempore eos dolores iusto earum saepe in sunt quibusdam, iste libero. Provident iste consectetur quis maxime consequuntur. Sunt magnam odit blanditiis?</p>
-		<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores tempore eos dolores iusto earum saepe in sunt quibusdam, iste libero. Provident iste consectetur quis maxime consequuntur. Sunt magnam odit blanditiis?</p>
-		<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores tempore eos dolores iusto earum saepe in sunt quibusdam, iste libero. Provident iste consectetur quis maxime consequuntur. Sunt magnam odit blanditiis?</p>
-		<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores tempore eos dolores iusto earum saepe in sunt quibusdam, iste libero. Provident iste consectetur quis maxime consequuntur. Sunt magnam odit blanditiis?</p>
-		<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores tempore eos dolores iusto earum saepe in sunt quibusdam, iste libero. Provident iste consectetur quis maxime consequuntur. Sunt magnam odit blanditiis?</p>
-		<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores tempore eos dolores iusto earum saepe in sunt quibusdam, iste libero. Provident iste consectetur quis maxime consequuntur. Sunt magnam odit blanditiis?</p>
+		
 	</textarea>
+	<br>
 
-	<button id="submit">Save</button>
+	<div class="form-group">
+		<label for="visibility">Visibility</label>
+		<br>
+		All : <input type="checkbox" name="sel" id="all" class="custom-form-control" value="all" checked> &nbsp;&nbsp;
+		FE : <input type="checkbox" name="sel" id="fe" class="custom-form-control" value="fe">&nbsp;&nbsp;
+		SE : <input type="checkbox" name="sel" id="se" class="custom-form-control" value="se">&nbsp;&nbsp;
+		TE : <input type="checkbox" name="sel" id="te" class="custom-form-control" value="te">&nbsp;&nbsp;
+		BE : <input type="checkbox" name="sel" id="be" class="custom-form-control" value="be">
+	</div>
+
+	<div class="form-group">
+		
+	</div>
 	</form>
+	<button class="btn btn-success" id="draft">Save as draft</button>
+		<button class="btn btn-success" id="Publish">Publish</button>
 	</div>
 	<div class="col-md-1"></div>
-</div>
-    <script src="vendor\js\build\ckeditor.js"></script>
-    <script>
-       ClassicEditor
-			.create( document.querySelector( "#editor" ), {
-				
-				toolbar: {
-					items: [
-					"heading",
-						"|",
-						"bold",
-						"italic",
-						"link",
-						"bulletedList",
-						"numberedList",
-						"|",
-						"indent",
-						"outdent",
-						"|",
-						"imageUpload",
-						"blockQuote",
-						"insertTable",
-						"mediaEmbed",
-						"undo",
-						"redo",
-						"fontSize",
-						"fontColor",
-						"fontBackgroundColor",
-						"fontFamily",
-						"highlight",
-						"horizontalLine",
-						"MathType",
-						"ChemType",
-						"specialCharacters",
-						"strikethrough",
-						"subscript",
-						"superscript",
-						"underline",
-						"CKFinder",
-						"alignment",
-						"code",
-						"codeBlock"
-					]
-				},
-                language: "en",
-                
-                ckfinder: {
-            // Upload the images to the server using the CKFinder QuickUpload command.
-            uploadUrl: "vendor/ckfinder_php_3.5.1/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images&responseType=json"
-        },
-
-		autosave: {
-			waitingTime: 2000,
-            save( editor ) {
-                // alert(editor.getData());
-            }
-        },
-
-				image: {
-					toolbar: [
-						"imageTextAlternative",
-						"imageStyle:full",
-						"imageStyle:side"
-					]
-				},
-				table: {
-					contentToolbar: [
-						"tableColumn",
-						"tableRow",
-						"mergeTableCells",
-						"tableCellProperties",
-						"tableProperties"
-					]
-				},
-				licenseKey: "",
-				
-			} )
-			.then( editor => {
-				window.editor = editor;
-		
-				
-				
-				
-			} )
-			.catch( error => {
-				console.error( error );
-			} );
-
-			document.getElementById("submit").addEventListener("onchange",(e)=>{
-				alert(editor.getData())
-			})
-
-			function readURL(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-            
-            reader.onload = function (e) {
-                $("#preview").attr("src", e.target.result);
-            }
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
-    $("#file").change(function(){
-        readURL(this);
-    });
 	
-	</script>';
+</div>
+	<script src="vendor\js\build\ckeditor.js"></script>
+	
+	<script src="resources/js/createpost.js">
+		</script>';
+	
+    
 	include_once "footer.php";
 	}
 	else{
@@ -216,6 +140,8 @@
 
 	
 	?>
+
+
 </body>
 
 </html>
