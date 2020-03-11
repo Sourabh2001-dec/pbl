@@ -33,31 +33,16 @@
     <section class="container">
 
 
-        <!-- <form class="login_box">
-            <div class="form-heading">Login</div> <br><br>
-            <span id="message" style="color:red"></span>
-                
-            Email <br>
-            <input type="email" name="user_email" id="user_email" required> <br><br>
-            Password <br>
-            <input type="password" name="user_password" id="user_password" required>
-            <br><br>
-            <div class="login_submit_button">
-            <input type="button" value="Login" name='login' id ='login_button'><br>
-
-                
-
-            <span>
-            New here? <a href="register.php">Create Account</a></span>
-            </div>
-        </form> -->
-
 
         <form id="register_form">
             <div style="text-align:center;font-size:170%;color:#ff9123;margin-bottom: 20px;">
                 Login
             </div>
-
+            <div class="form-row">
+                <div class="col-md-3"></div>
+                <div class="msg col-md-6 text-danger"></div>
+                <div class="col-md-3"></div>
+            </div>
             <div class="form-row">
                 <div class="col-md-3"></div>
                 <div class="form-group col-md-6">
@@ -116,9 +101,13 @@
                             var msg = "";
                             if (response == 1) {
                                 window.location = "index.php";
-                            } else {
+                            } 
+                            else if(response == 10){
+                                $(".msg").html("Already Logged In On Another Device!");
+                            }
+                            else {
                                 msg = "Invalid username or password!";
-                                $("#message").html(msg + "<br><br>");
+                                $(".msg").html(msg);
                             }
 
                         }

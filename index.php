@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,7 +23,7 @@
 
 <body>
     <?php 
-    session_start();
+    
     if (isset($_SESSION['name'])) {
         include 'session_navbar.php';
     }

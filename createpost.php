@@ -1,9 +1,6 @@
-<!-- <?php 
-	if (isset($_SESSION["mail"])) {
-			
-		
-	}
-?> -->
+<?php 
+session_start();
+?>
 
 
 <!DOCTYPE html>
@@ -17,7 +14,7 @@
 
 	<?php
 		include_once "link_inc.php";
-		session_start();
+		
 	?>
 
 	<style>
@@ -102,11 +99,14 @@
 	<div class="form-group">
 		<label for="visibility">Visibility</label>
 		<br>
-		All : <input type="checkbox" name="sel" id="all" class="custom-form-control" value="all" checked> &nbsp;&nbsp;
-		FE : <input type="checkbox" name="sel" id="fe" class="custom-form-control" value="fe">&nbsp;&nbsp;
-		SE : <input type="checkbox" name="sel" id="se" class="custom-form-control" value="se">&nbsp;&nbsp;
-		TE : <input type="checkbox" name="sel" id="te" class="custom-form-control" value="te">&nbsp;&nbsp;
-		BE : <input type="checkbox" name="sel" id="be" class="custom-form-control" value="be">
+		<input type="checkbox" name="sel" id="all" class="custom-form-control" value="all" checked>All  &nbsp;&nbsp;
+		<input type="checkbox" name="sel" id="fe" class="custom-form-control" value="fe">FE &nbsp;&nbsp;
+
+		<input type="checkbox" name="sel" id="se" class="custom-form-control" value="se">SE &nbsp;&nbsp;
+
+		<input type="checkbox" name="sel" id="te" class="custom-form-control" value="te">TE &nbsp;&nbsp;
+
+		<input type="checkbox" name="sel" id="be" class="custom-form-control" value="be">BE 
 	</div>
 
 	<div class="form-group">
