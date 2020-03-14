@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 1080">
+  <defs>
+    <style>
+      .cls-1 {
+        clip-path: url(#clip-Web_1920_2);
+      }
+
+      .cls-2 {
+        fill: #f80;
+        opacity: 0.05;
+      }
+
+      .cls-3 {
+        fill: #ffe2cb;
+        opacity: 0.1;
+      }
+
+      .cls-4 {
+        opacity: 0.09;
+      }
+
+      .cls-5 {
+        fill: none;
+        stroke: #fff;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-6 {
+        fill: #fff;
+      }
+    </style>
+    <clipPath id="clip-Web_1920_2">
+      <rect width="1920" height="1080"/>
+    </clipPath>
+  </defs>
+  <g id="Web_1920_2" data-name="Web 1920 – 2" class="cls-1">
+    <rect class="cls-6" width="1920" height="1080"/>
+    <path id="Path_4" data-name="Path 4" class="cls-2" d="M87,1633.949c375.872-240.007,592.4-187.832,592.4-187.832s135.656,0,187.832,187.832,237.4,190.441,237.4,190.441S1472.468,1887,1334.2,2085.267s-357.4,67.828-313.053,268.7,213.92-33.914,268.7,180.005,44.349,138.265,44.349,138.265H87Z" transform="matrix(0.602, 0.799, -0.799, 0.602, 1020.944, -1194.358)"/>
+    <path id="Path_5" data-name="Path 5" class="cls-3" d="M87,1749.251c600.867-383.674,947.007-300.266,947.007-300.266s216.859,0,300.266,300.266,379.5,304.437,379.5,304.437,588.022,100.088,366.992,417.036-571.34,108.429-500.444,429.548,341.97-54.215,429.548,287.755,70.9,221.03,70.9,221.03H87Z" transform="matrix(-1, -0.017, 0.017, -1, 3117.225, 2454.739)"/>
+    <g id="Group_6" data-name="Group 6" transform="translate(480 411)">
+      <g id="Group_6-2" data-name="Group 6" class="cls-4" transform="matrix(-0.934, -0.358, 0.358, -0.934, 258.768, 45.449)">
+        <path id="Path_3" data-name="Path 3" class="cls-5" d="M264.065,86s-38.572,60.241-58.035,138.6S154.88,367.631,109.8,344.816" transform="translate(-109.368 -21)"/>
+      </g>
+    </g>
+  </g>
+</svg>

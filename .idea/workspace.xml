@@ -59,7 +59,7 @@
       <workItem from="1581146675935" duration="167000" />
       <workItem from="1581146869878" duration="757000" />
       <workItem from="1581148402559" duration="4000" />
-      <workItem from="1584161129134" duration="658000" />
+      <workItem from="1584161129134" duration="928000" />
     </task>
     <servers />
   </component>
@@ -76,5 +76,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="&quot;backup&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;backup&quot;" />
   </component>
 </project>

@@ -12,21 +12,9 @@ if ($uname != "" && $password != ""){
     $count = $row['cntUser'];
     //1 for logged in 10 for not logged in
     if($count > 0){
-        $sql = "select * from user where email='".$uname."' and password='".$password."'";
-        $results = $conn->query($sql);
-        $row = $results->fetch_assoc();
+        $token = getToken(10);
 
-        if ($row['status']==false) {
-            $sql = "UPDATE user SET status=true WHERE email='".$row['email']."'";
-            $conn->query($sql);
-            session_start();
-            $_SESSION['name']=$row['firstname'].' '.$row['lastname'];
-            $_SESSION['mail']=$row['email'];
-            echo 1;
-        }
-        else{
-            echo 10;
-        }
+
 
         
     }else{
