@@ -1,9 +1,19 @@
 
 
 
-<nav class="navbar navbar-expand-sm navbar-dark bg-dark sticky-top">
-    <a class="navbar-brand" href="#"><img src="resources/img/logo.png" alt=""></a>
-    <li class="nav-item btn bg-light rounded ml-auto  d-sm-none" style="font-size:90%;padding:3px 10px">
+<nav class="navbar navbar-expand-sm sticky-top">
+    <a class="navbar-brand" href="index.php"><img src="resources/img/Group 5.png" alt=""></a>
+   
+
+    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+        aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars" style = "color : grey"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+        
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+
+        <li class="nav-item btn bg-light rounded mx-1  d-sm-none" style="font-size:90%;padding:3px 10px">
                 <i class="fas fa-user" style="color:#3f3f3f;"></i>
                 <?php 
         
@@ -12,16 +22,6 @@
         }
         ?>
             </li>
-
-    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
-        aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="collapsibleNavId">
-        
-        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-
-
 
             <li class="nav-item mx-1">
                 <a class="nav-link text-white" href="createpost.php">Create</a>
@@ -42,10 +42,10 @@
             </li>
 
 
-            <li class="nav-item d-sm-none text-white">
-                <div class="nav-link text-white">
-                    Category : <select id="category_select"
-                        class="form-control-inline text-white bg-dark border border-0">
+            <li class="nav-item d-sm-none">
+                <div class="nav-link">
+                    <label for="category_select">Category: &nbsp;</label><select id="category_select"
+                        class="form-control border w-75" name="category_select" style="display:inline-block">
                         <option value="">Physics</option>
                         <option value="">Mathematics</option>
                         <option value="">Sports</option>

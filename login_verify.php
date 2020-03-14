@@ -10,7 +10,7 @@ if ($uname != "" && $password != ""){
     $result = $conn->query($sql);
     $row = mysqli_fetch_array($result);
     $count = $row['cntUser'];
-
+    //1 for logged in 10 for not logged in
     if($count > 0){
         $sql = "select * from user where email='".$uname."' and password='".$password."'";
         $results = $conn->query($sql);
@@ -32,5 +32,20 @@ if ($uname != "" && $password != ""){
     }else{
         echo 0;
     }
+}
+
+
+function getToken($length){
+ $token = "";
+ $codeAlphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+ $codeAlphabet.= "abcdefghijklmnopqrstuvwxyz";
+ $codeAlphabet.= "0123456789";
+ $max = strlen($codeAlphabet); // edited
+
+ for ($i=0; $i < $length; $i++) {
+  $token .= $codeAlphabet[random_int(0, $max-1)];
+ }
+
+ return $token;
 }
 ?>

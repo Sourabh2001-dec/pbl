@@ -14,12 +14,9 @@ font-family: 'Raleway', sans-serif;*/
     padding: 0;
     box-sizing: border-box;
     font-family: 'Raleway', sans-serif;
-    font-size : 17px;
+    font-size : 15px;
 }
 
-body{
-
-}
 
 *:focus{
     outline: none;
@@ -30,11 +27,9 @@ input:invalid{
 }
 
 body {
-    /* background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); */
-    background-color: rgb(255, 252, 252);
-    background-size: cover;
-    background-repeat: no-repeat;
+    background: rgb(68, 68, 68);
 
+   
 }
 
 
@@ -49,7 +44,7 @@ body {
 
 #reg_user_firstname-error,#register_user_confirm_password-error,
 #register_user_password-error,#register_user_email-error,#reg_user_lastname-error,
-#reg_user_firstname-error,#year-error,#divi-error{
+#reg_user_firstname-error,#year-error,#divi-error,#branch-error{
     color: red;
     font-weight: 400;
     font-size: 80%;
@@ -85,16 +80,18 @@ body {
 
 /*----------------navbar-------------------*/
 .navbar{
-    background-color: rgb(7, 0, 44);
-    /* font-size: 100%; */
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 2px 2px -2px rgba(0,0,0,.4);
+    
+
 }
 
 .navbar .navbar-brand img{
     height: 40px;
 }
 
-.navbar nav-link{
-    color: white;
+.navbar a{
+    color: rgb(68, 68, 68) !important;
 }
 
 .navbar ul li .nav-link::after{
@@ -162,14 +159,15 @@ body {
 
 .main-post,
 .ranked_post {
-    margin-top: 10px;
+    margin-top: 5px;
     font-family: 'Raleway', sans-serif;
     background-color: white;
-    border-radius: 10px;
+    border-radius: 2px;
     height: auto;
     width: 100%;
     padding: 10px;
-    box-shadow: -4px 9px 25px -6px rgba(0, 0, 0, .1);
+    box-shadow: -1px 1px 9px 0px #0000001a;
+    
 }
 
 .post_image {
@@ -260,9 +258,10 @@ body {
 footer {
     display: block;
     position: relative;
+    font-size: 80%;
     width: 100%;
     height: 100px;
-    background-color: black;
+    background-color: #343A40;
     text-align: center;
     line-height: 100px;
     color: grey;
@@ -338,4 +337,45 @@ input[type="text"] {
 .login_submit_button a{
     text-decoration: none;
     color: #ff9123;
+}
+
+@media only screen and (max-width: 390px){
+    .navbar .navbar-brand img{
+        height: 35px !important;
+    }
+
+    
+}
+@media only screen and (max-width: 546px){
+
+    
+
+   .main-post .post_title{
+       font-size: 98%;
+       line-height: 1.05 !important;
+   }
+
+   .row_user{
+       width: 97vw;
+   }
+
+   .main-post .post_image{
+       width: 35%;
+   }
+
+   .main-post{
+       padding: 10px 5px;
+   }
+
+   .main-post .content{
+       width: 60%;
+       margin-left: 3%;
+   }
+
+   .main-post .post_by_info{
+       font-size: 60%;
+       margin-top: 5px;
+   }
+
+   
 }

@@ -19,7 +19,7 @@
                 echo '';
                 
             }else{
-                $sql = "INSERT INTO user (firstname, lastname, email, password, is_teacher, year, division) VALUES ('".$_POST["reg_user_firstname"]."','".$_POST["reg_user_lastname"]."','".$_POST["register_user_email"]."','".$_POST["register_user_password"]."','".$_POST["is_teacher"]."','".$_POST["year"]."','".$_POST["divi"]."')";
+                $sql = "INSERT INTO user (firstname, lastname, email, password, is_teacher, year, division,branch) VALUES ('".$_POST["reg_user_firstname"]."','".$_POST["reg_user_lastname"]."','".$_POST["register_user_email"]."','".$_POST["register_user_password"]."','".$_POST["is_teacher"]."','".$_POST["year"]."','".$_POST["divi"]."','".$_POST["branch"]."')";
                 $conn->query($sql);
             
             }
@@ -95,28 +95,29 @@
 <body>
     <?php include "plain_navbar.php" ?>
 
-    
-    
+
+
     <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalCenterTitle">Registration Successful!</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <!-- <div class="modal-body">
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Registration Successful!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <!-- <div class="modal-body">
         Registration Successful
       </div> -->
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
-        <a href="login.php"><button type="button" class="btn btn-primary">Go to Login</button></a>
-      </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+                    <a href="login.php"><button type="button" class="btn btn-primary">Go to Login</button></a>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
 
 
     <section>
@@ -155,6 +156,9 @@
                             <input type="email" class="form-control" name="register_user_email" id="register_user_email"
                                 placeholder="xyz@example.com">
                         </div>
+
+                        
+
 
                         <div class="form-row">
 
@@ -201,6 +205,16 @@
 
                                 </select>
                             </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="branch">Branch</label>
+                            <select name="branch" id="branch" class="form-control">
+                                <option value="0">Select Branch</option>
+                                <option value="ce">Computer Engineering</option>
+                                <option value="it">Information Technology</option>
+                                <option value="entc">Elec. & Tel Engineering</option>
+                            </select>
                         </div>
                         <button type="submit" name='save' class="btn rounded-pill mt-3" style="margin-left: 50%;
                         transform: translateX(-50%);" id='save_button'>Sign Up</a>
@@ -290,13 +304,17 @@
                     register_user_confirm_password: {
                         equalTo: '#register_user_password'
                     },
-                    divi : {
-                        required : true,
-                        selection : true
+                    divi: {
+                        required: true,
+                        selection: true
                     },
-                    year : {
-                        required : true,
-                        selection : true
+                    year: {
+                        required: true,
+                        selection: true
+                    },
+                    branch: {
+                        required: true,
+                        selection: true
                     }
 
                 },
@@ -331,27 +349,29 @@
                         type: "POST",
                         url: 'register.php',
                         data: {
-                            register_user_confirm_password:form.register_user_confirm_password.value,
-                            register_user_email:form.register_user_email.value,
-                            register_user_password:form.register_user_password.value,
-                            reg_user_lastname:form.reg_user_lastname.value,
-                            reg_user_firstname:form.reg_user_firstname.value,
-                            divi : form.divi.value,
-                            year : form.year.value,
-                            is_teacher : '0',
-                            save : 'save'
+                            register_user_confirm_password: form
+                                .register_user_confirm_password.value,
+                            register_user_email: form.register_user_email.value,
+                            register_user_password: form.register_user_password.value,
+                            reg_user_lastname: form.reg_user_lastname.value,
+                            reg_user_firstname: form.reg_user_firstname.value,
+                            branch: form.branch.value,
+                            divi: form.divi.value,
+                            year: form.year.value,
+                            is_teacher: '0',
+                            save: 'save'
 
                         }, // serializes the form's elements.
                         success: function () {
                             $('#myModal').modal('show');
                             alert(form.divi.value)
-                            form.reset();      
+                            form.reset();
                         }
                     });
 
-                    
 
-                    
+
+
                 }
             });
 
@@ -384,10 +404,9 @@
             }, "Letters only please");
 
             jQuery.validator.addMethod("selection", function (value, element) {
-                if(value == 0){
+                if (value == 0) {
                     return false;
-                }
-                else{
+                } else {
                     return true;
                 }
             }, "Please do the selection");
@@ -453,20 +472,21 @@
                         type: "POST",
                         url: 'register.php',
                         data: {
-                            register_user_confirm_password:form.register_user_confirm_password.value,
-                            register_user_email:form.register_user_email.value,
-                            register_user_password:form.register_user_password.value,
-                            reg_user_lastname:form.reg_user_lastname.value,
-                            reg_user_firstname:form.reg_user_firstname.value,
-                            divi : '0',
-                            year : '0',
-                            is_teacher : '1',
-                            save : 'save'
+                            register_user_confirm_password: form
+                                .register_user_confirm_password.value,
+                            register_user_email: form.register_user_email.value,
+                            register_user_password: form.register_user_password.value,
+                            reg_user_lastname: form.reg_user_lastname.value,
+                            reg_user_firstname: form.reg_user_firstname.value,
+                            divi: '0',
+                            year: '0',
+                            is_teacher: '1',
+                            save: 'save'
 
                         }, // serializes the form's elements.
                         success: function () {
                             $('#myModal').modal('show');
-                            form.reset();      
+                            form.reset();
                         }
                     });
 
@@ -504,6 +524,16 @@
 
 
         });
+
+       
+
+    $.each(["#reg_user_lastname","#reg_user_firstname","#reg_user_lastname2","#reg_user_firstname2"],function(index,field){
+        $(field).blur(function () {
+      var _val = $(field).val();
+      var _txt = _val.charAt(0).toUpperCase() + _val.slice(1).toLowerCase();
+      $(field).val(_txt);
+  })
+    })
     </script>
 
 </body>

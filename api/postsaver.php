@@ -1,4 +1,22 @@
 <?php
-if (isset($_POST['content'])) {
-    print_r($_POST);
+session_start();
+
+include_once '../db.php';
+
+if (isset($_POST['job'])) {
+
+    if($_POST['job']=="save"){
+        $blog_id = uniqid();
+        $author = $_SESSION['name'];
+        $mail = $_SESSION['mail'];
+        $sql = "INSERT INTO post_data (blog_id, title, category, thumb_img, content, public, fe_branch, fe_div, se_branch, se_div, te_branch, te_div, be_branch, be_div, type, author, mail) VALUES ('".$blog_id."','".$_POST['title']."','".$_POST['category']."','".$_POST['thumb_img']."','".$_POST['content']."','".$_POST['public']."','".$_POST['fe_branch']."','".$_POST['fe_div']."','".$_POST['se_branch']."','".$_POST['se_div']."','".$_POST['te_branch']."','".$_POST['te_div']."','".$_POST['be_branch']."','".$_POST['be_div']."','".$_POST['type']."','".$author."','".$mail."')";
+                $conn->query($sql);
+                echo $blog_id;
+
+    }
+    else if ($_POST['job']=="update") {
+        
+    }
+
+    
 }

@@ -10,7 +10,7 @@
   $fileExt = explode('.',$fileName);
   $fileActualExt = strtolower(end($fileExt));
 
-  $allowed = array('jpg','jpeg','png','gif');
+  $allowed = array('jpg','jpeg','png','gif','svg');
 
   if (in_array($fileActualExt,$allowed)) {
     if ($fileError === 0) {

@@ -1,10 +1,10 @@
 
-<nav class="navbar navbar-expand-sm navbar-dark bg-dark sticky-top">
-    <a class="navbar-brand" href="index.php"><img src="resources/img/logo.png" alt=""></a>
+<nav class="navbar navbar-expand-sm sticky-top">
+    <a class="navbar-brand" href="index.php"><img src="resources/img/Group 5.png" alt=""></a>
 
     <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
         aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+        <i class="fas fa-bars" style = "color : grey"></i>
     </button>
     <div class="collapse navbar-collapse" id="collapsibleNavId">
     

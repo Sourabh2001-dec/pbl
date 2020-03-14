@@ -25,7 +25,7 @@
     <?php 
     
     if (isset($_SESSION['name'])) {
-        include 'session_navbar.php';
+        include 'navbar.php';
     }
     else{
         session_destroy();
