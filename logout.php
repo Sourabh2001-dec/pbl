@@ -1,9 +1,5 @@
 <?php
 session_start();
-include_once 'db.php';
-
-$sql = "UPDATE user SET status=false WHERE email='".$_SESSION['mail']."'";
-$conn->query($sql);
 
 session_destroy();
 

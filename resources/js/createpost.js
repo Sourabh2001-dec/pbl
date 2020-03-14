@@ -358,10 +358,11 @@ function nullCheck(){
 
 
 
-function ContentData(result) {
+function ContentData(result,update) {
 
 	var content = editor.getData();
-	state.last_thumb = result;
+
+	if(update){state.last_thumb = result;}
 	nullCheck()
 	if(content == ""){
 		content = "No data available"
@@ -379,6 +380,7 @@ function ContentData(result) {
 			job : state.job,
 			type : state.type,
 			title: title,
+			blog_id : state.blog_id,
 			category: $("#category option:selected").val(),
 			thumb_img: result,
 			content: content,
@@ -419,11 +421,11 @@ function dataUploadWithImg() {
 			contentType: false,
 			success: function (res) {
 				state.changes.thumb_img = false
-				ContentData(res)
+				ContentData(res,true)
 			}
 		})
 	} else {
-		ContentData("resources/img/nullimg.jpg")
+		ContentData("resources/img/nullimg.jpg",true)
 	}
 
 }
@@ -448,44 +450,7 @@ $("#draft").on("click", (e) => {
 	// after initial save
 	else {
 		if (state.changes.thumb_img === false) {
-
-			var content = editor.getData();
-			
-			nullCheck()
-			if(content == ""){
-				content = "No data available"
-			}
-
-			if(title == ""){
-				title = "Enter your title"
-			}
-
-			$.ajax({
-				url: "api/postsaver.php",
-				type: "POST",
-				data: {
-					job : state.job,
-					type : state.type,
-					
-					title: title,
-					category: $("#category option:selected").val(),
-					content: content,
-					thumb_img: state.last_thumb,
-					public : state.visibility.all,
-					fe_branch : state.visibility.fe.branch.join(" , "),
-					fe_div : state.visibility.fe.div.join(" , "),
-					se_branch : state.visibility.se.branch.join(" , "),
-					se_div : state.visibility.se.div.join(" , "),
-					te_branch : state.visibility.te.branch.join(" , "),
-					te_div : state.visibility.te.div.join(" , "),
-					be_branch : state.visibility.be.branch.join(" , "),
-					be_div : state.visibility.be.div.join(" , "),
-				},
-				success: function (res) {
-					console.log(res)
-					alert("POST SAVED AS DRAFT after first save withoout img upload")
-				}
-			})
+				ContentData(state.last_thumb,false)
 		} else if (state.changes.thumb_img === true) {
 			dataUploadWithImg();
 			console.log("save after first save and img upload")

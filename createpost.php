@@ -1,5 +1,6 @@
 <?php 
 session_start();
+include 'check_token.php';
 
 function show_visibility($year){
 	echo '

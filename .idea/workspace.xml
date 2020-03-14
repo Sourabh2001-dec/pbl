@@ -2,20 +2,39 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="420de42a-60aa-4233-8dc0-4787b51df26e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/img/Group 5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/img/Group 5@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/img/bg.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/img/bg2.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/img/bup/Group 5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/img/bup/Group 5@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/img/icons8-male-user-32.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/img/reading.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/img_store.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/img_store.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/postsaver.php" beforeDir="false" afterPath="$PROJECT_DIR$/api/postsaver.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/createpost.php" beforeDir="false" afterPath="$PROJECT_DIR$/createpost.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/footer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/login_verify.php" beforeDir="false" afterPath="$PROJECT_DIR$/login_verify.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/navbar.php" beforeDir="false" afterPath="$PROJECT_DIR$/navbar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plain_navbar.php" beforeDir="false" afterPath="$PROJECT_DIR$/plain_navbar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/register.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/createpost.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/createpost.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/session_navbar.php" beforeDir="false" afterPath="$PROJECT_DIR$/session_navbar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/userfiles/5e67878d89d975.31678884.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/userfiles/5e6787a02eefc5.39780226.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/userfiles/5e67881c478ff4.87233034.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/userfiles/5e67891c49aa09.47804633.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/userfiles/5e67896aeb7f45.58391432.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/userfiles/5e678aa54e8914.77017484.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/userfiles/5e678ac5b22dc5.58381960.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/userfiles/5e678ac83b95a3.13016643.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/userfiles/5e678bd1ddff10.30981289.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/userfiles/5e678c3c0fed92.74602233.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/userfiles/5e6798279c61a0.62111618.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/userfiles/5e67995191cdb7.02299049.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/userfiles/5e679be477a8c0.75952335.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/userfiles/5e679bf3859022.42656618.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/userfiles/5e67caf9787bb4.51285226.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/userfiles/5e67caff2c50a2.28520266.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/userfiles/5e67cbaf6acb91.99735042.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/userfiles/5e67d18c9a72e3.54254832.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/userfiles/5e67d1a649fd91.35974477.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/userfiles/5e67d269aecb91.56268060.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/userfiles/5e67d342bd20f0.73023175.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/userfiles/5e67d35ea4f078.92337860.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/userfiles/5e689b32a611a8.46086381.jpg" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -59,8 +78,16 @@
       <workItem from="1581146675935" duration="167000" />
       <workItem from="1581146869878" duration="757000" />
       <workItem from="1581148402559" duration="4000" />
-      <workItem from="1584161129134" duration="928000" />
+      <workItem from="1584161129134" duration="1104000" />
     </task>
+    <task id="LOCAL-00001" summary="&quot;backup&quot;">
+      <created>1584162083759</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1584162083759</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

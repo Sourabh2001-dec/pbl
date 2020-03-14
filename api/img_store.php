@@ -1,4 +1,5 @@
 <?php
+include '../check_token.php';
     if (isset($_FILES['thumb_img'])) {
         $file = $_FILES['thumb_img'];
   $fileName = $file['name'];

@@ -102,9 +102,6 @@
                             if (response == 1) {
                                 window.location = "index.php";
                             } 
-                            else if(response == 10){
-                                $(".msg").html("Already Logged In On Another Device!");
-                            }
                             else {
                                 msg = "Invalid username or password!";
                                 $(".msg").html(msg);
