@@ -24,7 +24,7 @@
             </li>
 
             <li class="nav-item mx-1">
-                <a class="nav-link text-white" href="createpost.php">Create</a>
+                <a class="nav-link text-white" href="create.php">Create</a>
             </li>
 
 

@@ -22,7 +22,7 @@
         ?>
 
             <li class="nav-item">
-                <a class="nav-link mx-1 " href="createpost.php">Create</a>
+                <a class="nav-link mx-1 " href="create.php">Create</a>
             </li>
 
 

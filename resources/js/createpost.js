@@ -113,29 +113,29 @@ function button_div_appender(div, name, e) {
 		$.each([fe, se, te, be], function (i, v) {
 			if (v.valid) {
 				if (name.includes("1")) {
-					v.div.push("1")
+					v.div.push(" 1 ");
 				} else if (name.includes("2")) {
-					v.div.push("2")
+					v.div.push(" 2 ")
 				} else if (name.includes("3")) {
-					v.div.push("3")
+					v.div.push(" 3 ")
 				} else if (name.includes("4")) {
-					v.div.push("4")
+					v.div.push(" 4 ")
 				} else if (name.includes("5")) {
-					v.div.push("5")
+					v.div.push(" 5 ")
 				} else if (name.includes("6")) {
-					v.div.push("6")
+					v.div.push(" 6 ")
 				} else if (name.includes("7")) {
-					v.div.push("7")
+					v.div.push(" 7 ")
 				} else if (name.includes("8")) {
-					v.div.push("8")
+					v.div.push(" 8 ")
 				} else if (name.includes("9")) {
-					v.div.push("9")
+					v.div.push(" 9 ")
 				} else if (name.includes("ten")) {
-					v.div.push("10")
+					v.div.push(" 10 ")
 				} else if (name.includes("ele")) {
-					v.div.push("11")
+					v.div.push(" 11 ")
 				} else if (name.includes("ALL")) {
-					v.div.push("all")
+					v.div.push(" all ")
 				}
 			}
 		})
@@ -143,29 +143,29 @@ function button_div_appender(div, name, e) {
 		$.each([fe, se, te, be], function (i, v) {
 			if (v.valid) {
 				if (name.includes("1")) {
-					v.div.splice(v.div.indexOf("1"), 1)
+					v.div.splice(v.div.indexOf(" 1 "), 1)
 				} else if (name.includes("2")) {
-					v.div.splice(v.div.indexOf("2"), 1)
+					v.div.splice(v.div.indexOf(" 2 "), 1)
 				} else if (name.includes("3")) {
-					v.div.splice(v.div.indexOf("3"), 1)
+					v.div.splice(v.div.indexOf(" 3 "), 1)
 				} else if (name.includes("4")) {
-					v.div.splice(v.div.indexOf("4"), 1)
+					v.div.splice(v.div.indexOf(" 4 "), 1)
 				} else if (name.includes("5")) {
-					v.div.splice(v.div.indexOf("5"), 1)
+					v.div.splice(v.div.indexOf(" 5 "), 1)
 				} else if (name.includes("6")) {
-					v.div.splice(v.div.indexOf("6"), 1)
+					v.div.splice(v.div.indexOf(" 6 "), 1)
 				} else if (name.includes("7")) {
-					v.div.splice(v.div.indexOf("7"), 1)
+					v.div.splice(v.div.indexOf(" 7 "), 1)
 				} else if (name.includes("8")) {
-					v.div.splice(v.div.indexOf("8"), 1)
+					v.div.splice(v.div.indexOf(" 8 "), 1)
 				} else if (name.includes("9")) {
-					v.div.splice(v.div.indexOf("9"), 1)
+					v.div.splice(v.div.indexOf(" 9 "), 1)
 				} else if (name.includes("ten")) {
-					v.div.splice(v.div.indexOf("10"), 1)
+					v.div.splice(v.div.indexOf(" 10 "), 1)
 				} else if (name.includes("ele")) {
-					v.div.splice(v.div.indexOf("11"), 1)
+					v.div.splice(v.div.indexOf(" 11 "), 1)
 				} else if (name.includes("ALL")) {
-					v.div.splice(v.div.indexOf("all"), 1)
+					v.div.splice(v.div.indexOf(" all "), 1)
 				}
 			}
 		});
@@ -329,28 +329,52 @@ $("#file").change(function (e) {
 function nullCheck(){
 	if (state.visibility.fe.branch.length == 0) {
 		state.visibility.fe.branch.push("a")
+	}else{
+		state.visibility.fe.branch = state.visibility.fe.branch.filter(function (e){return e!=="a"})
 	}
+
 	if (state.visibility.fe.div.length == 0) {
 		state.visibility.fe.div.push("a")
+	}else{
+		state.visibility.fe.div = state.visibility.fe.div.filter(function (e){return e!=="a"})
 	}
+
 	if (state.visibility.se.branch.length == 0) {
 		state.visibility.se.branch.push("a")
+	}else{
+		state.visibility.se.branch = state.visibility.se.branch.filter(function (e){return e!=="a"})
 	}
+
 	if (state.visibility.se.div.length == 0) {
 		state.visibility.se.div.push("a")
+	}else{
+		state.visibility.se.div = state.visibility.se.div.filter(function (e){return e!=="a"})
 	}
+
 	if (state.visibility.te.branch.length == 0) {
 		state.visibility.te.branch.push("a")
+	}else{
+		state.visibility.te.branch = state.visibility.te.branch.filter(function (e){return e!=="a"})
 	}
+
 	if (state.visibility.te.div.length == 0) {
 		state.visibility.te.div.push("a")
+	}else{
+		state.visibility.te.div = state.visibility.te.div.filter(function (e){return e!=="a"})
 	}
+
 	if (state.visibility.be.branch.length == 0) {
 		state.visibility.be.branch.push("a")
+	}else{
+		state.visibility.be.branch = state.visibility.be.branch.filter(function (e){return e!=="a"})
 	}
+
 	if (state.visibility.be.div.length == 0) {
 		state.visibility.be.div.push("a")
+	}else{
+		state.visibility.be.div = state.visibility.be.div.filter(function (e){return e!=="a"})
 	}
+
 	
 }
 
@@ -385,14 +409,14 @@ function ContentData(result,update) {
 			thumb_img: result,
 			content: content,
 			public : state.visibility.all,
-			fe_branch : state.visibility.fe.branch.join(" , "),
-			fe_div : state.visibility.fe.div.join(" , "),
-			se_branch : state.visibility.se.branch.join(" , "),
+			fe_branch : state.visibility.fe.branch.join(","),
+			fe_div : state.visibility.fe.div.join(","),
+			se_branch : state.visibility.se.branch.join(","),
 			se_div : state.visibility.se.div.join(" , "),
-			te_branch : state.visibility.te.branch.join(" , "),
-			te_div : state.visibility.te.div.join(" , "),
-			be_branch : state.visibility.be.branch.join(" , "),
-			be_div : state.visibility.be.div.join(" , "),
+			te_branch : state.visibility.te.branch.join(","),
+			te_div : state.visibility.te.div.join(","),
+			be_branch : state.visibility.be.branch.join(","),
+			be_div : state.visibility.be.div.join(","),
 		},
 		success: function (res) {
 			console.log(res)
@@ -400,8 +424,23 @@ function ContentData(result,update) {
 				state.blog_id = res;
 				state.set_id = false;
 			}
+			if(state.saved == false){
+				state.job = "update"
+			}
+
+			if(state.type == "published"){
+				$('.modal-footer').css("display","none")
+				$('.modal-body').html('<h2 class="text-success"><i class="fas fa-check-circle mx-1" style="font-size:100%"></i>Published Successfully!<h2>')
+				
+				// $('.modal-body').css("color","green")
+				// $('.modal-body').css("font-size","200%")
+				window.setTimeout(function (){window.location = "index.php"},1500)
+			}
+
 			state.saved = true
+			if(state.type !== "published"){
 			alert("POST SAVED AS DRAFT")
+			}
 		}
 	})
 }
@@ -442,9 +481,10 @@ $("#draft").on("click", (e) => {
 	// --------------------------------------------------------
 
 	if (state.saved === false) {
-
+		state.job = "save"
 		dataUploadWithImg();
-		state.job = "update"
+		
+		console.log("first save")
 
 	}
 	// after initial save
@@ -457,5 +497,58 @@ $("#draft").on("click", (e) => {
 		}
 	}
 
+
+})
+
+
+
+
+// --------------------------------------PUBLISH FUNCTION---------------------------------
+
+$('#publish_btn').on('click',function (){
+	state.type="published"
+	$('.modal-body').text("Publishing...")
+	if (state.saved === false) {
+		state.job = "save"
+		dataUploadWithImg();
+		
+		console.log("first save")
+
+	}
+	// after initial save
+	else {
+		if (state.changes.thumb_img === false) {
+				ContentData(state.last_thumb,false)
+				console.log("i fired tge event")
+		} else if (state.changes.thumb_img === true) {
+			dataUploadWithImg();
+			console.log("save after first save and img upload")
+		}
+	}
+})
+
+$('#Publish').on('click',function (){
+	console.log("pressed")
+	
+	let title_CHECK = $('#title').val()
+	let file_CHECK = $('#file').val()
+	let content_CHECK = editor.getData();
+	
+
+	if (title_CHECK && file_CHECK && content_CHECK) {
+		
+		$('.modal-header').text("Publish Article")
+		$('.modal-body').text("Please confirm to publish the article")
+		$('#alert_box').modal('show')
+		$('#publish_btn').css("display","inline-block")
+
+	}
+	else{
+		$('.modal-header').text("Alert!")
+		$('.modal-header').css('color','red')
+		$('.modal-body').text("Please fill the empty fields")
+		$('#publish_btn').css("display","none")
+		$('#alert_box').modal('show')
+	}
 
 })

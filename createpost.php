@@ -89,6 +89,29 @@ function show_visibility($year){
 </head>
 
 <body>
+		
+		
+		<!-- Modal -->
+		<div class="modal fade" id="alert_box" tabindex="-1" role="dialog" aria-labelledby="alert_box_title" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+						<div class="modal-header">
+								<h2 class="modal-title"></h2>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+							</div>
+					<div class="modal-body">
+						<div class="container-fluid modal-body-cont">
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" id="modal_dis" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary" id="publish_btn">Publish</button>
+					</div>
+				</div>
+			</div>
+		</div>
 
 	<?php
 	$id = $_SESSION["mail"].uniqid();
@@ -102,7 +125,7 @@ function show_visibility($year){
 		<div class="col-md-1"></div>
 	<div class="col-md-10 mt-4 ">
 
-	<form class="px-2">
+	<form class="px-2" id="post_create_form">
 		<div class="form-group">
 			<label for="title">Title <span style="color: rgb(170, 169, 169);"><i>(The title of the blog goes here)</i></span></label>
 			<input type="text" name="title" id="title" class="form-control">
@@ -223,9 +246,10 @@ function show_visibility($year){
 	
 </div>
 	<script src="vendor\js\build\ckeditor.js"></script>
-	
+	<script src="vendor\js\jquery.validate.min.js"></script>
 	<script src="resources/js/createpost.js">
 		</script>';
+
 	
     
 	include_once "footer.php";
